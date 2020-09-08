@@ -1,0 +1,24 @@
+<div class="container">
+  <input class="col-3" (ngModelChange)="this.filterSummaries()" [(ngModel)]="this.filter" type="text" placeholder="Search by name" aria-label="Search">
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Total Movies Rented</th>
+          <th>Total Spent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let summary of displayedSummaries; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ summary.memberFullName }}</td>
+          <td>{{ summary.totalRentals }}</td>
+          <td>{{ summary.totalSpent | currency:'USD'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+</div>

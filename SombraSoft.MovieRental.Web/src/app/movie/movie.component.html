@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="text-right">
+    <button type="submit" class="btn btn-primary" (click)="onNew()">
+      New Movie
+    </button>
+  </div>
+  <br>
+  <div class="regentry" *ngIf="showNew">
+    <form (ngSubmit)="onSave()">
+      <div class="form-group row">
+        <label for="title-input" class="col-2 col-form-label">Title</label>
+        <div class="col-6">
+          <input class="form-control" type="text" [(ngModel)]="movie.title" name="title" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="year-input" class="col-2 col-form-label">Year</label>
+        <div class="col-2">
+          <input class="form-control" type="number" [(ngModel)]="movie.year" name="year" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="rating-input" class="col-2 col-form-label">Rating</label>
+        <div class="col-2">
+          <input class="form-control" type="number" min="1" max="10" [(ngModel)]="movie.rating" name="rating" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="rentalDuration-input" class="col-2 col-form-label">Rental Duration (days)</label>
+        <div class="col-2">
+          <input class="form-control" type="number" [(ngModel)]="movie.rentalDuration" name="rentalDuration" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="rentalCost-input" class="col-2 col-form-label">Rental Cost</label>
+        <div class="col-2">
+          <input class="form-control" type="number" [(ngModel)]="movie.rentalCost" name="rentalCost" />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">{{ submitType }}</button>
+      <button type="submit" class="btn btn-primary" (click)="onCancel()">
+        Cancel
+      </button>
+    </form>
+  </div>
+  <br>
+    <input class="col-3" (ngModelChange)="this.filterMovies()" [(ngModel)]="this.filter" type="text" placeholder="Search by title" aria-label="Search">
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Rating</th>
+          <th>Rental duration</th>
+          <th>Rental cost</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of displayedMovies; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ movie.title }}</td>
+          <td>{{ movie.year }}</td>
+          <td>{{ movie.rating }}</td>
+          <td>{{ movie.rentalDuration }} days</td>
+          <td>{{ movie.rentalCost | currency:'USD'}}</td>
+          <td>
+            <button type="button" class="btn btn-info" (click)="onEdit(movie)">
+              Edit
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="onDelete(movie)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+</div>

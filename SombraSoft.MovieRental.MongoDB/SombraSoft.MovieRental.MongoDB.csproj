@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="30.0.4" />
+    <PackageReference Include="MongoDB.Bson" Version="2.11.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.1" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataSeed\Datasets.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Datasets.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="DataSeed\Datasets.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Datasets.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+<div class="container">
+  <input class="col-3" (ngModelChange)="this.filterPurchases()" [(ngModel)]="this.filter" type="text" placeholder="Search by member id" aria-label="Search">
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Member Id</th>
+          <th>Rental Date</th>
+          <th>Rental Expiry</th>
+          <th>Total Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let purchase of displayedPurchases; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ purchase.id }}</td>
+          <td>{{ purchase.rentalDate | date: 'yyyy/MM/dd'}}</td>
+          <td>{{ purchase.rentalExpiry | date: 'yyyy/MM/dd' }}</td>
+          <td>{{ purchase.totalCost | currency:'USD'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+</div>

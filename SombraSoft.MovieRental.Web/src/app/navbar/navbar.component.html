@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand"><img src="../../assets/logo.png"
+      style="height: 39px;width: 39px;" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
+    data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="movies">Movies
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="members">Members</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="rental-history">Rental History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="member-summary">Member Summary Report</a>
+      </li>
+    </ul>
+  </div>
+</nav>

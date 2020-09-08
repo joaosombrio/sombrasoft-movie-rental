@@ -1,0 +1,24 @@
+<div class="container">
+  <input class="col-3" (ngModelChange)="this.filterMembers()" [(ngModel)]="this.filter" type="text" placeholder="Search by name" aria-label="Search">
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of displayedMembers; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ member.fullName }}</td>
+          <td>{{ member.address }}</td>
+          <td>{{ member.phoneNumber }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+</div>

@@ -1,0 +1,12 @@
+{
+    "name": "Node Alpine",
+    "dockerFile": "Dockerfile",
+
+    // Add the IDs of extensions you want installed when the container is created in the array below.
+    "extensions": [
+        "dbaeumer.vscode-eslint"
+    ],
+    
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [80, 443],
+}
