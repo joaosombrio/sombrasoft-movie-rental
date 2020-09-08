@@ -68,7 +68,6 @@ namespace SombraSoft.MovieRental.API
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Rental API v1");
             });
 
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

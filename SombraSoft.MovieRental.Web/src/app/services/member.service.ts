@@ -7,7 +7,7 @@ import { MemberSummary } from '../models/member-summary.model';
   providedIn: 'root'
 })
 export class MemberService {
-  apiUrl = "https://localhost:5001";
+  apiUrl = 'http://localhost:5000';
   constructor(private http: HttpClient) { }
 
   getAll(): Promise<Member[]> {

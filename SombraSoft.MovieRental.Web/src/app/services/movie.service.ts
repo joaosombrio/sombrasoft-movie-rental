@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MovieService {
-  apiUrl = "https://localhost:5001";
+  apiUrl = 'http://localhost:5000';
   constructor(private http: HttpClient) { }
 
   getAll(): Promise<Movie[]> {
